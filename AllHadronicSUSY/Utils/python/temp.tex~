@@ -1,0 +1,890 @@
+\section{Estimation of top quark and {\PW}+jets backgrounds}
+\label{sec:lost-leptons-overview}
+
+Following the baseline kinematic selection and the rejection of events
+with reconstructed and identified electrons and muons (described in
+Chapter \ref{sec:event-selection}), about 50\% of the expected SM
+background (integrated over all search bins) comes from \ttbar and
+{\PW}+jets events with a lepton that is ``lost,'' or not identified.
+This fraction grows significantly (up to 90\%) in bins of higher \njets
+and \nbjets (Figure \ref{fig:BGpieBins}).
+
+Of the lost-lepton events remaining after the electron and muon event vetoes
+but before the cut on isolated tracks, about $45\%$ contain hadronically-decaying taus.. The isolated track veto cut rejects about $30\%$ each of the hadronic tau and remaining lost $e/\mu$ events.
+
+
+
+\subsection{Classical Lost-lepton ($e/\mu$) estimation method}
+\label{sec:lost-leptons}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.70\linewidth]{plots/lost-lepton/lepton_veto_sketch.png}
+  \caption{Sketch of the criteria e0lectrons and muons from W decays must meet in order to be rejected by the explicit lepton veto.}
+  \label{fig:lost-lepton-scatch}
+\end{figure}
+Events including muons or electrons either directly from a W decay or via the intermediate stat of a tau may may pass the event selection if either of the following steps is not met (see Fig: \ref{fig:lost-lepton-scatch}):
+\begin{itemize}
+\item Kinematic acceptance cuts
+\item Reconstruction criteria
+\item Isolation definition
+\end{itemize}
+The basic concept of this data-driven method is to estimate the amount of electrons and muons failing either of these steps by selecting a control-sample of exactly one well isolated muon or electron and weighting these events according to the lepton efficiencies of each of these steps separately.\\
+In the following the method is discussed starting with the efficiencies determination followed by defining the single lepton control-sample and the computation of the prediction and coverage for the minor contribution of di-leptonic \ttbar decays.\\
+{\bf Determining the lepton efficiencies}\\
+The main crucial input to this method is the choice and the binning of the parametrization variables of the lepton efficiency maps. Extensive studies have been performed and are ongoing in finding and optimizing the variables. Each of the steps (see Fig. \ref{fig:lost-lepton-scatch}) has been investigated independently.\\
+The efficiencies have been determined from the \ttbar and W+jets MC samples applying the baseline selection without any lepton criteria (see Sec. \ref{sec:event-selection}).
+For the single electron and muon efficiency determination one starts with selecting events with exactly one muon (electron) from generator information making sure the lepton originated from the hard interaction. Than the acceptance efficiency are derived by comparing the amount of gen leptons passing and failing the kinematic $\eta$ and \pt cut. If a lepton passes the acceptance cuts a match is performed to a reconstructed lepton fulfilling all reconstruction and identification criteria. Also here the mount of passing and failing determines the reconstruction efficiency. The same is performed on the well reconstructed leptons to determine the isolation and finally the $\mt$ cut performance. The di-leptonic contribution  to the single lepton control sample and efficiency is calculated requiring two generator leptons, combining the acceptance, reconstruction and isolation of both leptons together in an overall efficiency.\\
+The following parametrization variables have been investigated: 
+\begin{itemize}
+\item Search variables: \HT, \MHT, \NJets \& \BTags
+\item Lepton $p_T$
+\item Activity around the lepton $A_{\mu/e}$  defined as Eq: \ref{eq:muon_activity},\ref{eq:elec_activity}
+\end{itemize}
+\begin{equation}
+  A_{\mu} = \sum_{Jet}^{\Delta R<1.0} \pt(Jet) * (ChargedEMFraction + ChargedHadFraction) 
+  \label{eq:muon_activity}
+\end{equation}
+\begin{equation}
+  A_{e} = \sum_{Jet}^{\Delta R<1.0} \pt(Jet) * (ChargedHadFraction) 
+  \label{eq:elec_activity}
+\end{equation}
+% acceptance
+Currently the following efficiency parametrization has been used for electrons and muons:
+\begin{itemize}
+\item Acceptance: \HT \& \MHT for \NJets=4-6 and \NJets=7-inf (2x2D binning) (see. Fig. \ref{fig:lost-lepton-acceptance-eff-mu}, \ref{fig:lost-lepton-acceptance-eff-elec})
+\item Reconstruction: $p_{T}$ and activity around the lepton $A$ (2D binning) (see. Fig. \ref{fig:lost-lepton-reconstruction-eff})
+\item Isolation: $p_{T}$ and activity around the lepton $A$ (2D binning) (see. Fig. \ref{fig:lost-lepton-isolation-eff})
+\item Purity of the lepton control sample (electron CS only): \MHT \& \NJets (2D binning) (see Fig. \ref{fig:lost-lepton-purity-eff})
+\item $m_T$-cut efficiency: \NJets (1D binning) (see. Fig. \ref{fig:lost-lepton-mtcut-eff})
+\item Di-leptonic contribution to single lepton control sample: \NJets (1D binning) (see. Fig. \ref{fig:lost-lepton-dilepcontribution-eff})
+\item Di-leptonic selection efficiency : \NJets (1D binning) (see. Fig. \ref{fig:lost-lepton-dilep-eff})
+\end{itemize}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.48\linewidth]{plots/lost-lepton/efficiencies/MuAccHTMHT_NJetsLow.pdf}
+  \includegraphics[width=0.48\linewidth]{plots/lost-lepton/efficiencies/MuAccHTMHT_NJetsHigh.pdf}
+  \caption{Muon acceptance efficiency maps.}
+  \label{fig:lost-lepton-acceptance-eff-mu}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.48\linewidth]{plots/lost-lepton/efficiencies/ElecAccHTMHT_NJetsLow.pdf}
+  \includegraphics[width=0.48\linewidth]{plots/lost-lepton/efficiencies/ElecAccHTMHT_NJetsHigh.pdf}
+  \caption{Electron acceptance efficiency maps.}
+  \label{fig:lost-lepton-acceptance-eff-elec}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.48\linewidth]{plots/lost-lepton/efficiencies/MuRecoPTActivity.pdf}
+  \includegraphics[width=0.48\linewidth]{plots/lost-lepton/efficiencies/ElecRecoPTActivity.pdf}
+  \caption{Muon and electron reconstruction efficiency maps.}
+  \label{fig:lost-lepton-reconstruction-eff}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.48\linewidth]{plots/lost-lepton/efficiencies/MuIsoPTActivity.pdf}
+  \includegraphics[width=0.48\linewidth]{plots/lost-lepton/efficiencies/ElecIsoPTActivity.pdf}
+  \caption{Muon and electron isolation efficiency maps.}
+  \label{fig:lost-lepton-isolation-eff}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.48\linewidth]{plots/lost-lepton/efficiencies/ElecPurity.pdf}
+  \caption{Purity of single electron control sample.}
+  \label{fig:lost-lepton-purity-eff}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.48\linewidth]{plots/lost-lepton/efficiencies/MuMTWNJets1D.pdf}
+  \includegraphics[width=0.48\linewidth]{plots/lost-lepton/efficiencies/ElecMTWNJets1D.pdf}
+  \caption{Muon and electron $m_T$-cut efficiency maps.}
+  \label{fig:lost-lepton-mtcut-eff}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.48\linewidth]{plots/lost-lepton/efficiencies/MuDiLepContributionMTWNJets1D.pdf}
+  \includegraphics[width=0.48\linewidth]{plots/lost-lepton/efficiencies/ElecDiLepContributionMTWNJets1D.pdf}
+  \caption{Muon and electron di-leptonic contribution to single lepton control sample.}
+  \label{fig:lost-lepton-dilepcontribution-eff}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.48\linewidth]{plots/lost-lepton/efficiencies/MuDiLepMTWNJets1D.pdf}
+  \includegraphics[width=0.48\linewidth]{plots/lost-lepton/efficiencies/ElecDiLepMTWNJets1D.pdf}
+  \caption{Muon and electron di-leptonic \ttbar event rejection efficiency.}
+  \label{fig:lost-lepton-dilep-eff}
+\end{figure}
+
+
+{\bf Selecting the single control-sample}\\
+The single electron and muon control sample is selected by requiring exactly one well isolated electron and no isolated muon (or one isolated muon and no isolated electrons) and no isolated tracks. 
+These events originate from a W to lepton and neutrino decay which opens the opportunity to computing the transverse projected mass (Eq. \ref{eq:mt}) of the W as can be seen in Fig. \ref{fig:lost-lepton-controlsample-mtw}. A cut at 100 GeV rejecting events resulting in a higher $m_T$ value reduces possible signal contamination of the control sample ( while preserving about 90 \% of single prompt W+jets and \ttbar events. Table \ref{tab:lost-lepton-control-smaple-searchbins} shows the amount of expected events vs the amount of single $\mu$ and e control sample for the search bins.\\
+In addition purity studies have been performed showing for the muonic control sample a purity of <99 \% thus no correction for impurity while the single electron control sample shows a significant contamination of non-prompt electrons leading to a purity around 90\% for which the control sample is corrected for.\\
+The last correction accounts for di-leptonic events in which one of the prompt leptons is lost. The amount of these events is already significantly reduced by applying $m_T < 100 GeV$ but still about 3\% of the total single lepton control sample originates from di-leptonic \ttbar decays (see Fig. \ref{fig:lost-lepton-dilepcontribution-eff}). These events need to be evaluated separately since it is by far more likely to lose one than two leptons.
+\begin{equation}
+  m_{T} = \sqrt{2 p_{T}(\mu) \met (1 - \cos(\Delta \Phi))}
+  \label{eq:mt}
+\end{equation}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.48\linewidth]{plots/lost-lepton/controlsample/ControlSample_Combined_mtw__MTW__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
+
+  \caption{$m_T$ distribution of the single electron and muon control sample selected from W+jets and \ttbar events together with a typical signal distribution (here T1tttt increased to 400 fb for visibility purpose).}
+  \label{fig:lost-lepton-controlsample-mtw}
+\end{figure}
+\clearpage
+\scriptsize
+\begin{table}
+
+  \scriptsize
+  \begin{tabular}{l|r|r|r|r}
+    \scriptsize
+
+    % \toprule
+    \hline
+    Selection  &                     MCEx  &           ElecCS  &             MuCS  &          Total Control-Sample  \\ 
+    \hline
+    % \midrule
+    Baseline &           $6139.2\pm22.5$&           $5451.4\pm20.8$&           $5365.3\pm20.4$&              $10816.7\pm50.0$ \\ 
+    \hline
+    B=0, NJet=4-Inf, HT=500-800, MHT=200-500 &            $1375.2\pm9.0$&            $1358.0\pm9.1$&            $1372.3\pm9.1$&               $2730.4\pm21.9$ \\ 
+    B=1, NJet=4-6, HT=500-800, MHT=200-500 &            $989.8\pm10.3$&             $846.6\pm9.5$&             $836.1\pm9.4$&               $1682.7\pm22.9$ \\ 
+    $\text{B}\geq$, NJet=4-6, HT=500-800, MHT=200-500 &              $97.0\pm3.5$&              $63.2\pm2.8$&              $56.9\pm2.7$&                 $120.0\pm6.7$ \\ 
+    B=1, NJet=6-Inf, HT=500-800, MHT=200-500 &             $173.6\pm4.6$&             $176.6\pm4.7$&             $158.3\pm4.4$&                $334.8\pm11.0$ \\ 
+    B=2, NJet=6-Inf, HT=500-800, MHT=200-500 &             $145.9\pm4.3$&             $133.6\pm4.1$&             $135.2\pm4.1$&                 $268.8\pm9.9$ \\ 
+    $\text{B}\geq$, NJet=6-Inf, HT=500-800, MHT=200-500 &              $41.2\pm2.3$&              $34.6\pm2.1$&              $31.2\pm2.0$&                  $65.8\pm5.0$ \\ 
+    B=0, NJet=4-Inf, HT=800-1200, MHT=200-500 &             $346.9\pm4.0$&             $328.9\pm3.8$&             $321.5\pm3.7$&                 $650.4\pm9.1$ \\ 
+    B=1, NJet=4-6, HT=800-1200, MHT=200-500 &             $241.5\pm4.9$&             $180.6\pm4.2$&             $166.1\pm4.0$&                 $346.7\pm9.9$ \\ 
+    $\text{B}\geq$, NJet=4-6, HT=800-1200, MHT=200-500 &              $27.0\pm1.8$&              $15.8\pm1.4$&              $15.1\pm1.4$&                  $30.9\pm3.3$ \\ 
+    B=1, NJet=6-Inf, HT=800-1200, MHT=200-500 &             $105.0\pm3.5$&              $95.7\pm3.3$&              $86.7\pm3.2$&                 $182.5\pm7.9$ \\ 
+    B=2, NJet=6-Inf, HT=800-1200, MHT=200-500 &              $93.7\pm3.4$&              $80.7\pm3.2$&              $76.2\pm3.1$&                 $156.9\pm7.6$ \\ 
+    $\text{B}\geq$, NJet=6-Inf, HT=800-1200, MHT=200-500 &              $31.2\pm2.0$&              $25.2\pm1.8$&              $20.6\pm1.6$&                  $45.8\pm4.2$ \\ 
+    B=0, NJet=4-Inf, HT=1200-Inf, MHT=200-500 &              $77.8\pm1.8$&              $61.4\pm1.5$&              $57.8\pm1.4$&                 $119.2\pm3.6$ \\ 
+    B=1, NJet=4-6, HT=1200-Inf, MHT=200-500 &              $46.4\pm2.1$&              $26.1\pm1.5$&              $22.9\pm1.4$&                  $49.1\pm3.5$ \\ 
+    $\text{B}\geq$, NJet=4-6, HT=1200-Inf, MHT=200-500 &               $5.2\pm0.8$&               $2.4\pm0.5$&               $1.1\pm0.3$&                   $3.5\pm1.2$ \\ 
+    B=1, NJet=6-Inf, HT=1200-Inf, MHT=200-500 &              $29.1\pm1.8$&              $21.3\pm1.5$&              $17.6\pm1.4$&                  $38.9\pm3.6$ \\ 
+    B=2, NJet=6-Inf, HT=1200-Inf, MHT=200-500 &              $26.4\pm1.8$&              $16.9\pm1.4$&              $17.6\pm1.5$&                  $34.5\pm3.5$ \\ 
+    $\text{B}\geq$, NJet=6-Inf, HT=1200-Inf, MHT=200-500 &               $7.9\pm1.0$&               $6.4\pm0.9$&               $4.7\pm0.8$&                  $11.0\pm2.1$ \\ 
+    B=0, NJet=4-Inf, HT=500-800, MHT=500-750 &              $28.7\pm1.1$&              $40.5\pm1.0$&              $41.7\pm1.0$&                  $82.2\pm2.5$ \\ 
+    B=1, NJet=4-6, HT=500-800, MHT=500-750 &              $10.2\pm0.9$&              $12.3\pm0.9$&              $14.3\pm1.0$&                  $26.6\pm2.3$ \\ 
+    $\text{B}\geq$, NJet=4-6, HT=500-800, MHT=500-750 &               $0.2\pm0.1$&               $0.6\pm0.3$&               $0.2\pm0.1$&                   $0.8\pm0.5$ \\ 
+    B=1, NJet=6-Inf, HT=500-800, MHT=500-750 &               $0.6\pm0.3$&               $0.6\pm0.3$&               $0.4\pm0.2$&                   $1.0\pm0.6$ \\ 
+    B=2, NJet=6-Inf, HT=500-800, MHT=500-750 &               $0.2\pm0.1$&               $0.4\pm0.2$&               $0.4\pm0.2$&                   $0.8\pm0.5$ \\ 
+    $\text{B}\geq$, NJet=6-Inf, HT=500-800, MHT=500-750 &               $0.0\pm0.0$&               $0.0\pm0.0$&               $0.0\pm0.0$&                   $0.0\pm0.0$ \\ 
+    B=0, NJet=4-Inf, HT=800-1200, MHT=500-750 &              $28.8\pm0.9$&              $49.7\pm1.1$&              $51.3\pm1.1$&                 $101.0\pm2.6$ \\ 
+    B=1, NJet=4-6, HT=800-1200, MHT=500-750 &              $15.1\pm1.2$&              $16.8\pm1.1$&              $14.1\pm0.9$&                  $30.8\pm2.5$ \\ 
+    $\text{B}\geq$, NJet=4-6, HT=800-1200, MHT=500-750 &               $0.7\pm0.3$&               $0.5\pm0.2$&               $0.7\pm0.3$&                   $1.1\pm0.6$ \\ 
+    B=1, NJet=6-Inf, HT=800-1200, MHT=500-750 &               $2.3\pm0.5$&               $2.4\pm0.4$&               $2.1\pm0.4$&                   $4.5\pm1.1$ \\ 
+    B=2, NJet=6-Inf, HT=800-1200, MHT=500-750 &               $1.7\pm0.5$&               $1.7\pm0.4$&               $2.1\pm0.5$&                   $3.8\pm1.1$ \\ 
+    $\text{B}\geq$, NJet=6-Inf, HT=800-1200, MHT=500-750 &               $0.3\pm0.2$&               $0.4\pm0.2$&               $0.2\pm0.1$&                   $0.6\pm0.5$ \\ 
+    B=0, NJet=4-Inf, HT=1200-Inf, MHT=500-750 &              $13.0\pm0.8$&              $14.0\pm0.6$&              $13.4\pm0.6$&                  $27.4\pm1.4$ \\ 
+    B=1, NJet=4-6, HT=1200-Inf, MHT=500-750 &               $7.1\pm0.8$&               $5.4\pm0.6$&               $4.8\pm0.6$&                  $10.3\pm1.5$ \\ 
+    $\text{B}\geq$, NJet=4-6, HT=1200-Inf, MHT=500-750 &               $0.6\pm0.3$&               $0.3\pm0.2$&               $0.0\pm0.0$&                   $0.3\pm0.4$ \\ 
+    B=1, NJet=6-Inf, HT=1200-Inf, MHT=500-750 &               $3.4\pm0.6$&               $3.1\pm0.6$&               $2.7\pm0.5$&                   $5.9\pm1.3$ \\ 
+    B=2, NJet=6-Inf, HT=1200-Inf, MHT=500-750 &               $2.0\pm0.5$&               $1.8\pm0.5$&               $1.8\pm0.5$&                   $3.6\pm1.1$ \\ 
+    $\text{B}\geq$, NJet=6-Inf, HT=1200-Inf, MHT=500-750 &               $1.2\pm0.4$&               $0.4\pm0.2$&               $0.3\pm0.2$&                   $0.6\pm0.5$ \\ 
+    B=0, NJet=4-Inf, HT=0800-Inf, MHT=750-Inf &               $8.1\pm0.4$&              $17.4\pm0.6$&              $17.8\pm0.6$&                  $35.2\pm1.4$ \\ 
+    B=1, NJet=4-Inf, HT=0800-Inf, MHT=750-Inf &               $4.1\pm0.5$&               $4.8\pm0.4$&               $4.2\pm0.3$&                   $9.0\pm0.9$ \\ 
+    B=2, NJet=4-Inf, HT=0800-Inf, MHT=750-Inf &               $1.2\pm0.3$&               $1.3\pm0.3$&               $1.1\pm0.3$&                   $2.4\pm0.7$ \\ 
+    $\text{B}\geq$, NJet=4-Inf, HT=0800-Inf, MHT=750-Inf &               $0.3\pm0.2$&               $0.0\pm0.0$&               $0.4\pm0.2$&                   $0.4\pm0.2$ \\  
+    
+    \hline
+    % \bottomrule 
+  \end{tabular}
+  \normalsize
+  \caption{Expected events vs amount of expected single electron and muon control sample for the exclusive search regions.}
+  \label{tab:lost-lepton-control-smaple-searchbins}
+\end{table}
+\normalsize
+
+\normalsize
+
+{\bf Predicting the single and di-leptonic \ttbar and W+jets background}\\
+After selecting and correcting the single electron and muon control sample weights are computed according to the efficiencies event by event .\\
+To model the not isolated muons the muon control sample is weighted according to:
+\begin{equation}
+  !\text{ISO}^{\mu} = {\rm CS}\cdot \frac{1-\epsilon_{\rm ISO}^{\mu}}{\epsilon_{\rm ISO}^{\mu}} 
+  %% \rm !ISO^{\mu}} = {\rm CS}\cdot \frac{1-\epsilon_{\rm ISO}^{\mu}}{\epsilon_{\rm ISO}^{\mu}} 
+  \label{eq:isolation_muon}
+\end{equation}
+with $\rm !ISO^{lepton}$ being the applied weight and $\epsilon_{X}^{\mu/e}$ being the efficiency of the criteria $X$ for the lepton.\\
+The next step is to model the not reconstructed muons which is done by taking the muon isolation and reconstruction (in)efficiency into account. The weight is calculated according to the following equation:
+\begin{equation}
+  {!\text{Reco}^{\mu}} = {\rm CS}\cdot \frac{1}{\epsilon_{\rm ISO}^{\mu}} \cdot \frac{1-\epsilon_{\rm Reco}^{\mu}}{\epsilon_{\rm Reco}^{\mu}}
+  \label{eq:reconstruction_muon}
+\end{equation}
+The last step in modeling the lost muons is to take also the muons into account which fall out of the detector acceptance. The weight has to include the isolation and reconstruction (in)efficiencies together with the out of acceptance efficiency:
+\begin{equation}
+  { !\text{Acc}^{\mu}} = {\rm CS}\cdot \frac{1}{\epsilon_{\rm ISO}^{\mu}}\cdot \frac{1}{\epsilon_{\rm Reco}^{\mu}} \cdot \frac{1-\epsilon^{\mu}_{Acc}}{\epsilon^{\mu}_{Acc}}
+  \label{eq:acceptance_muon}
+\end{equation}
+The electrons are modeled using the same muon CS. This is valid since the decay of a $W$ to a $\mu$ or $e$ has according to the lepton universality the same probability.
+All muon (in)efficiencies need to be taken into account before modeling the lost electrons resulting in more complex equations. The following equations are used to model the not isolated (Eq.~\ref{eq:elec_iso}), not reconstructed (Eq.~\ref{eq:elec_reco}) and the out of acceptance electrons (Eq.~\ref{eq:elec_acc}). 
+\begin{equation}
+  {\rm !ISO^{e}} = {\rm CS}\cdot \frac{1-\epsilon_{\rm ISO}^{e}}{\epsilon_{\rm ISO}^{\mu}} \cdot \frac{\epsilon^{e}_{Reco}}{\epsilon^{\mu}_{Reco}} \cdot \frac{\epsilon^{e}_{Acc}}{\epsilon^{\mu}_{Acc}}
+  \label{eq:elec_iso}
+\end{equation}
+\begin{equation}
+  {\rm !Reco^{e}} = {\rm CS}\cdot \frac{1}{\epsilon_{\rm ISO}^{\mu}}\cdot \frac{1-\epsilon_{\rm Reco}^{e}}{\epsilon_{\rm Reco}^{\mu}}  \cdot \frac{\epsilon^{e}_{Acc}}{\epsilon^{\mu}_{Acc}}.
+  \label{eq:elec_reco}
+\end{equation}
+\begin{equation}
+  {\rm !Acc^{e}} = {\rm CS}\cdot \frac{1}{\epsilon_{\rm ISO}^{\mu}}\cdot \frac{1}{\epsilon_{\rm Reco}^{\mu}}  \cdot \frac{1 - \epsilon^{e}_{Acc}}{\epsilon^{\mu}_{Acc}}
+  \label{eq:elec_acc}
+\end{equation}
+
+% \begin{equation}
+%   {\rm !ID^{e}} = {\rm CS}\cdot \frac{1}{\epsilon_{\rm ISO}^{\mu}}\cdot \frac{1-\epsilon_{\rm ID}^{e}{\epsilon_{\rm ID}^{\mu}}  \cdot \frac{\epsilon^{e}_{Acc}}{\epsilon^{\mu}_{Acc}}.
+%   \label{eq:elec_acc}
+% \end{equation}
+The final equation to predict all lost leptons is:
+\begin{equation}
+  \label{eq:totalWeight}
+  \text{Total Lost Leptons} = C \cdot \sum_{i=e,\mu}\left(\text{!Iso}^i+\text{!Reco}^i+\text{!Acc}^i\right) 
+\end{equation}
+with $C$ being a correction factor consisting of the correction factor for the \mt cut efficiency and a small factor for di-leptonic events of the order of 1\% of the total prediction (including for the electron control sample the purity correction).\\ 
+The same is done for the single electron control sample.\\
+Finally the two independent predictions are combined to predict the total amount of lost electrons and muons. A closure test of the full method can be seen in Fig. \ref{fig:lost-lepton-closure} for the baseline selection. Overall good agreement can be observed for all search variables. In addition a closure test for each of the search bins can be seen in Tab. \ref{tab:lost-lepton-searchbin-closure}. 
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.48\linewidth]{plots/lost-lepton/closure/Closure_Combined_delPhiClass_isoTrackVetoApplied__HT__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
+  \includegraphics[width=0.48\linewidth]{plots/lost-lepton/closure/Closure_Combined_delPhiClass_isoTrackVetoApplied__MHT__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}\\
+  \includegraphics[width=0.48\linewidth]{plots/lost-lepton/closure/Closure_Combined_delPhiClass_isoTrackVetoApplied__NJets__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}
+  \includegraphics[width=0.48\linewidth]{plots/lost-lepton/closure/Closure_Combined_delPhiClass_isoTrackVetoApplied__BTags__MCEx_vs_MuPrMTWDiLep+ElecPrMTWDiLep__Baseline.pdf}\\
+  \caption{Comparison of the expected and predicted lost electrons and muons using both the single electron and muon control sample. Overall good agreement can be observed for all search variables.}
+  \label{fig:lost-lepton-closure}
+\end{figure}
+\clearpage
+
+\begin{table}
+
+  \scriptsize
+  \begin{tabular}{l|r|r|r|r}
+    \scriptsize
+
+    \toprule
+
+    Selection  &                     MCEx  &           ElecPr  &             MuPr  &          Total MC prediction  \\ 
+    \hline
+    \midrule
+    Baseline &           $6139.2\pm22.5$&           $3036.0\pm14.8$&           $2997.3\pm14.8$&               $6033.3\pm35.8$ \\ 
+    \hline
+    B=0, NJet=4-Inf, HT=500-800, MHT=200-500 &            $1375.2\pm9.0$&             $667.7\pm5.4$&             $673.8\pm5.3$&               $1341.5\pm13.0$ \\ 
+    B=1, NJet=4-6, HT=500-800, MHT=200-500 &            $989.8\pm10.3$&             $485.4\pm6.7$&             $481.2\pm6.7$&                $966.6\pm16.2$ \\ 
+    $\text{B}\geq$, NJet=4-6, HT=500-800, MHT=200-500 &              $97.0\pm3.5$&              $41.4\pm2.2$&              $39.8\pm2.2$&                  $81.1\pm5.3$ \\ 
+    B=1, NJet=6-Inf, HT=500-800, MHT=200-500 &             $173.6\pm4.6$&              $93.0\pm2.9$&              $83.7\pm2.8$&                 $176.8\pm6.9$ \\ 
+    B=2, NJet=6-Inf, HT=500-800, MHT=200-500 &             $145.9\pm4.3$&              $73.5\pm2.6$&              $76.7\pm2.8$&                 $150.3\pm6.5$ \\ 
+    $\text{B}\geq$, NJet=6-Inf, HT=500-800, MHT=200-500 &              $41.2\pm2.3$&              $19.9\pm1.4$&              $17.7\pm1.3$&                  $37.7\pm3.3$ \\ 
+    B=0, NJet=4-Inf, HT=800-1200, MHT=200-500 &             $346.9\pm4.0$&             $195.6\pm3.0$&             $190.5\pm2.9$&                 $386.1\pm7.2$ \\ 
+    B=1, NJet=4-6, HT=800-1200, MHT=200-500 &             $241.5\pm4.9$&             $132.0\pm3.8$&             $122.3\pm3.7$&                 $254.2\pm9.1$ \\ 
+    $\text{B}\geq$, NJet=4-6, HT=800-1200, MHT=200-500 &              $27.0\pm1.8$&              $13.1\pm1.3$&              $12.8\pm1.4$&                  $25.9\pm3.2$ \\ 
+    B=1, NJet=6-Inf, HT=800-1200, MHT=200-500 &             $105.0\pm3.5$&              $62.1\pm2.6$&              $56.7\pm2.5$&                 $118.9\pm6.1$ \\ 
+    B=2, NJet=6-Inf, HT=800-1200, MHT=200-500 &              $93.7\pm3.4$&              $53.9\pm2.4$&              $52.7\pm2.5$&                 $106.7\pm5.9$ \\ 
+    $\text{B}\geq$, NJet=6-Inf, HT=800-1200, MHT=200-500 &              $31.2\pm2.0$&              $16.7\pm1.4$&              $14.1\pm1.3$&                  $30.8\pm3.2$ \\ 
+    B=0, NJet=4-Inf, HT=1200-Inf, MHT=200-500 &              $77.8\pm1.8$&              $42.5\pm1.4$&              $39.6\pm1.2$&                  $82.1\pm3.2$ \\ 
+    B=1, NJet=4-6, HT=1200-Inf, MHT=200-500 &              $46.4\pm2.1$&              $21.5\pm1.5$&              $20.3\pm1.5$&                  $41.8\pm3.7$ \\ 
+    $\text{B}\geq$, NJet=4-6, HT=1200-Inf, MHT=200-500 &               $5.2\pm0.8$&               $2.3\pm0.6$&               $0.8\pm0.3$&                   $3.1\pm1.3$ \\ 
+    B=1, NJet=6-Inf, HT=1200-Inf, MHT=200-500 &              $29.1\pm1.8$&              $15.4\pm1.3$&              $14.2\pm1.3$&                  $29.6\pm3.2$ \\ 
+    B=2, NJet=6-Inf, HT=1200-Inf, MHT=200-500 &              $26.4\pm1.8$&              $13.7\pm1.3$&              $14.0\pm1.3$&                  $27.8\pm3.2$ \\ 
+    $\text{B}\geq$, NJet=6-Inf, HT=1200-Inf, MHT=200-500 &               $7.9\pm1.0$&               $5.4\pm0.9$&               $3.9\pm0.7$&                   $9.3\pm2.0$ \\ 
+    B=0, NJet=4-Inf, HT=500-800, MHT=500-750 &              $28.7\pm1.1$&              $13.0\pm0.5$&              $12.7\pm0.4$&                  $25.6\pm1.1$ \\ 
+    B=1, NJet=4-6, HT=500-800, MHT=500-750 &              $10.2\pm0.9$&               $4.6\pm0.5$&               $5.7\pm0.6$&                  $10.3\pm1.2$ \\ 
+    $\text{B}\geq$, NJet=4-6, HT=500-800, MHT=500-750 &               $0.2\pm0.1$&               $0.3\pm0.2$&               $0.1\pm0.0$&                   $0.4\pm0.4$ \\ 
+    B=1, NJet=6-Inf, HT=500-800, MHT=500-750 &               $0.6\pm0.3$&               $0.2\pm0.1$&               $0.1\pm0.0$&                   $0.3\pm0.2$ \\ 
+    B=2, NJet=6-Inf, HT=500-800, MHT=500-750 &               $0.2\pm0.1$&               $0.2\pm0.1$&               $0.1\pm0.1$&                   $0.3\pm0.2$ \\ 
+    $\text{B}\geq$, NJet=6-Inf, HT=500-800, MHT=500-750 &               $0.0\pm0.0$&               $0.0\pm0.0$&               $0.0\pm0.0$&                   $0.0\pm0.0$ \\ 
+    B=0, NJet=4-Inf, HT=800-1200, MHT=500-750 &              $28.8\pm0.9$&              $16.9\pm0.5$&              $17.6\pm0.5$&                  $34.5\pm1.2$ \\ 
+    B=1, NJet=4-6, HT=800-1200, MHT=500-750 &              $15.1\pm1.2$&               $6.8\pm0.6$&               $6.2\pm0.6$&                  $13.0\pm1.4$ \\ 
+    $\text{B}\geq$, NJet=4-6, HT=800-1200, MHT=500-750 &               $0.7\pm0.3$&               $0.3\pm0.1$&               $0.4\pm0.2$&                   $0.7\pm0.4$ \\ 
+    B=1, NJet=6-Inf, HT=800-1200, MHT=500-750 &               $2.3\pm0.5$&               $1.0\pm0.2$&               $0.9\pm0.2$&                   $1.9\pm0.6$ \\ 
+    B=2, NJet=6-Inf, HT=800-1200, MHT=500-750 &               $1.7\pm0.5$&               $0.6\pm0.2$&               $1.1\pm0.3$&                   $1.7\pm0.5$ \\ 
+    $\text{B}\geq$, NJet=6-Inf, HT=800-1200, MHT=500-750 &               $0.3\pm0.2$&               $0.3\pm0.1$&               $0.1\pm0.0$&                   $0.3\pm0.3$ \\ 
+    B=0, NJet=4-Inf, HT=1200-Inf, MHT=500-750 &              $13.0\pm0.8$&               $7.0\pm0.5$&               $7.0\pm0.5$&                  $14.1\pm1.1$ \\ 
+    B=1, NJet=4-6, HT=1200-Inf, MHT=500-750 &               $7.1\pm0.8$&               $3.9\pm0.6$&               $3.4\pm0.6$&                   $7.3\pm1.5$ \\ 
+    $\text{B}\geq$, NJet=4-6, HT=1200-Inf, MHT=500-750 &               $0.6\pm0.3$&               $0.3\pm0.2$&               $0.0\pm0.0$&                   $0.3\pm0.4$ \\ 
+    B=1, NJet=6-Inf, HT=1200-Inf, MHT=500-750 &               $3.4\pm0.6$&               $2.5\pm0.6$&               $2.0\pm0.5$&                   $4.5\pm1.3$ \\ 
+    B=2, NJet=6-Inf, HT=1200-Inf, MHT=500-750 &               $2.0\pm0.5$&               $1.6\pm0.5$&               $1.1\pm0.3$&                   $2.7\pm1.1$ \\ 
+    $\text{B}\geq$, NJet=6-Inf, HT=1200-Inf, MHT=500-750 &               $1.2\pm0.4$&               $0.5\pm0.3$&               $0.2\pm0.1$&                   $0.7\pm0.6$ \\ 
+    B=0, NJet=4-Inf, HT=0800-Inf, MHT=750-Inf &               $8.1\pm0.4$&               $4.7\pm0.2$&               $4.7\pm0.2$&                   $9.4\pm0.5$ \\ 
+    B=1, NJet=4-Inf, HT=0800-Inf, MHT=750-Inf &               $4.1\pm0.5$&               $1.4\pm0.2$&               $1.1\pm0.1$&                   $2.5\pm0.4$ \\ 
+    B=2, NJet=4-Inf, HT=0800-Inf, MHT=750-Inf &               $1.2\pm0.3$&               $0.6\pm0.2$&               $0.4\pm0.2$&                   $1.0\pm0.5$ \\ 
+    $\text{B}\geq$, NJet=4-Inf, HT=0800-Inf, MHT=750-Inf &               $0.3\pm0.2$&               $0.0\pm0.0$&               $0.3\pm0.2$&                   $0.3\pm0.2$ \\ 
+
+    
+    \bottomrule 
+
+  \end{tabular}
+  \normalsize
+  \caption{ Comparison of prediction from single electron and muon control sample vs expected lost-leptons in exclusive search regions. Overall reasonable agreement between expectation and combined prediction can be observed.}
+  \label{tab:lost-lepton-searchbin-closure}
+\end{table}
+\normalsize
+
+\clearpage
+\subsection{Hadronically decaying $\tau$ estimation}
+\label{sec:hadronic-taus}
+
+% 
+% Intro of concepts
+% 
+The \wlnubr{}+jets, \ttbar{}, or single top events satisfy the search selection when the $\Pe$/$\Pgm$
+is not identified or isolated, or is out of the detector acceptance (``lost-lepton'' background)
+or when a $\tau$ lepton decays hadronically and is not removed by the isotrack vetoes ($\tauh$ background).
+
+In the RA2 multijets searches in Run~1~\cite{RA28TeVpaper,RA28TeVan,RA2-2011pub,RA2-2010pub},
+we employed a ``tau-template'' method to estimate the $\tauh$ background, and we plan to extend
+this approach for the Run 2 analysis.
+
+In this approach, the \tauh background is estimated from a sample of $\mu$ + jets events
+by requiring exactly one $\mu$ with $\pt>20\GeV$ and $|\eta|<2.1$. 
+This control sample of $\mu + $jets events is
+mainly composed of $\wmunu{}$~+~jets and $\ttbarMuNu$ and $\ttbarMUTAUHNu$ processes.
+The $\mu$~+~jets and $\tauh{}$~+~jets events arise from the same physics processes; hence
+the hadronic component of the two samples is the same aside from the response of the 
+detector to a muon or a $\tauh$ jet. 
+So, the basic concept of this method is, in order to account for this difference,
+the muon is replaced by a simulated \tauh jet,
+whose \pt value is randomly sampled from an MC response function, $\pt^{\text{jet}}/\pt^\tau$. 
+The muon transverse momenta are then smeared according to the template.
+Global hadronic variables, e.g., \njets, \HT{}, and \text{\MHT},
+in the events are subsequently recomputed and the full analysis event selection applied. 
+
+% KH Discuss triggers in future
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.48\linewidth]{plots/hadronic_tau/TauResponseTemplates_PHYS14_13TeV_AB.pdf}
+  \caption{The hadronic tau response templates: the distributions of $\pt(\mathrm{visible})/\pt(\tau^\mathrm{gen})$ 
+    for different $\pt(\tau^\mathrm{gen})$ ranges as measured in the \ttbar MC sample.}
+  \label{fig:tau_response}
+\end{figure}
+
+% 
+% About tau templates
+% 
+Tau-jets are characterized by a low multiplicity of particles compared to QCD jets, typically a few pions and neutrinos. 
+The ``template'' describing the fraction of visible energy ($f_{VE}$) is obtained as follows.
+A reconstructed jet is matched in the $\eta-\phi$ plane to a generator-level tau-lepton ($\pt>20\GeVc$ and $\eta<2.1$). 
+The matching criteria is $\Delta R$(jet,$\tau$)~$<0.1$ for tau $p_{T}>50$~GeV, $\Delta R$(jet,$\tau$)~$<0.2$ for tau $p_{T}<50$~GeV.
+We choose a slightly larger matching criteria of 0.2 for lower $p_{T}$ ranges in order to maintain the high matching
+efficiency.
+%% so that more than $95$\% of the events are picked up.
+For these matches, the fraction of visible energy, defined as the ratio of the reconstructed %%pileup-subtrated (a la fastjet) 
+tau-jet $\pt$ to the generator-level tau-lepton $\pt$ is computed.
+The tau response templates obtained from the \ttbar MC sample are shown in Fig.~\ref{fig:tau_response}.
+% The tau templates are obtained from both $\PW$ and \ttbar PHYS14 MC samples.
+% We then mix the two templates according to their cross-section to mimic what happens in data as it contains both $W$ and \ttbar events.
+The longer high response tail for lower \pt tau leptons are expected due to the \pt resolution
+degradation for lower \pt taus.
+On the low response side, the distribution for low-\pt taus turn on around 0.4, while those for higher-\pt
+taus turn on much earlier. This seems to be due to the threshold cut on jet \pt{}'s at 10\GeV for the MiniAOD
+dataset. This issue affecting low-\pt taus with low energy response will be addressed in the next iteration of the study.
+The visible \pt below 10 \GeV is unlikely to affect our hadronic variables even if there are other
+hadronic activities around the muon; however, we have to take
+into account the probability of taus having such low response.
+
+
+% 
+% Muon control sample
+% 
+The muon control sample is selected from data applying the following selection.
+\begin{itemize}
+\item Events are required to have one and only one isolated muon with $\pt>20\GeVc$, $|\eta|<2.1$, and
+  PF relative-isolation (as defined in Section~\ref{sec:event-selection}) $<$ 0.2.
+  %% The offline muon s election is identical to the one described in Section~\ref{sec:eventselection}.
+\item Events with an additional muon and electron %%as flagged by the RA2 leptonVeto 
+  are rejected according to the prescription of Section~\ref{sec:event-selection}.
+\item The transverse mass of the $W$ ($m_{\rm T} = \sqrt{2 p_{\rm T}(\mu) E^{\rm miss}_{\rm T} (1 - \cos(\Delta \phi))}$) 
+  should be less than 100 GeV. The aim of this cut is to remove most of the possible signal contamination.
+\end{itemize}
+% 
+% 
+% 
+For each event of this single muon control sample, the muon is replaced by a simulated \tauh jet,
+whose \pt value is randomly sampled from tau templates, $\pt^{\text{jet}}/\pt^\tau$. 
+In order to sample the response function completely, for the Run~1 analyses,
+this procedure is repeated one hundred times for each event.
+The \njets, \HT{}, and \text{\MHT} values of the events are recalculated, now including this $\tauh$ jet,
+which provides the \tauh background prediction.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.38\linewidth]{plots/hadronic_tau/delphi_HT_Plot.pdf}
+  \includegraphics[width=0.38\linewidth]{plots/hadronic_tau/delphi_MHT_Plot.pdf}
+  \includegraphics[width=0.38\linewidth]{plots/hadronic_tau/delphi_NJet_Plot.pdf}
+  \includegraphics[width=0.38\linewidth]{plots/hadronic_tau/delphi_NBtag_Plot.pdf}
+  \caption{The \HT, \MHT, \njets, \nbjets distributions predicted from simulated events compared to the simulation
+    expectation of the hadronic tau background for the baseline selection. Only \ttbar MC sample is used.}
+  \label{fig:tauh_template_closure}
+\end{figure}
+
+% 
+The predicted background needs corrected for the (1) muon selection efficiency, 
+(2) kinematic and detector acceptance, 
+(3) contamination of events with $\PW\rightarrow\tau\nu_{\tau}\rightarrow\mu\nu_\mu\bar{\nu}_{\tau}\nu_{\tau}$
+(as opposed to $\PW\rightarrow\mu\nu_{\mu}$),
+and (4) the ratio of branching fractions
+$\mathcal{B}(\PW\rightarrow\tauh\nu)/\mathcal{B}(\PW\rightarrow\mu\nu)= 0.6476 \pm 0.0024$~\cite{PDG}.
+The muon isolation and reconstruction efficiencies
+are obtained from MC simulation of \PW{}+jets and \ttbar events 
+in bins of lepton \pt and $\Delta R$
+relative to the closest jet.
+In the 8 TeV Run 1 analyses, the first correction is made on an event-by-event basis,
+the second the third corrections are made for each search region, and the
+last branching fraction correction is made globally.
+Preliminary \tauh{}-background prediction using this method based on the \ttbar MC sample
+only and using a single correction factor for the muon selection efficiency,
+acceptance, and $\mathcal{B}(\PW\rightarrow\tauh\nu)/\mathcal{B}(\PW\rightarrow\mu\nu)$
+are shown in Fig.~\ref{fig:tauh_template_closure}.
+It indicates that we over-predict the background for high \nbjets which is still under investigation.
+
+
+
+%% ------------------------------------------------------------------------------------------------
+
+\clearpage
+\subsection{Extrapolating background estimates from medium to high \MHT }
+\label{sec:mht-extrapolation}
+
+The lost-lepton method described in Sec.\ref{sec:lost-leptons} relies on a control sample to search
+sample ratio of about 2 to 1.
+For our most sensitive search bins, with background below a few events, and relatively good signal efficiency,
+the statistical uncertainty on the lost-lepton background estimate can be substantial and sometimes
+the dominant background uncertainty.
+The expected exclusion sensitivity (i.e. the expected upper limit on the signal cross section
+if the signal does not exist) does not strongly depend on the statistical uncertainty on the
+background in these very low background bins.
+However, reducing the statistical uncertainty on the lost-lepton background estimate can substantially
+improve the discovery sensitivity (i.e. the significance of an excess due to a real signal), since a
+smaller background uncertainty reduces the likelihood of the null hypothesis if an excess is observed.
+This is the motivation for the method described in this subsection.
+
+The lost-lepton \MHT spectrum depends on the underlying \pt spectrum of the leptonically decaying $W$
+and the angular distribution of the $W$ decay.
+The $W$ \pt spectrum depends on the top quark \pt spectrum, for which the Monte Carlo is less reliable
+than the angular distribution of the $W$ decay, which is well understood (see Sec. 7 of \cite{RA2bSummer2011}
+and \cite{w-helicity-fractions-theory}).
+The \MHT and $W$ \pt are related by
+% 
+\begin{equation}
+  \label{eq:mht-wpt}
+  \MHT \ \approx \ \pt^W \ \left( 1 - \cos \Delta \theta_T \right) / 2
+\end{equation}
+% 
+where $\Delta \theta_T$ is the angle between the direction of the $W$ in the lab frame and the direction
+of the charged lepton in the $W$ rest frame, all in the transverse plane.
+The $W$ \pt can be reconstructed in single lepton control sample events, which provides a data control
+sample for the $W$ \pt spectrum.  To an excellent approximation (see Figure \ref{fig:ptw-met-mht}) the $W$ \pt can be calculated by taking the vector sum of the \MHT and \pt of the lepton:
+\begin{equation}
+  \label{eq:wpt-reco}
+  |\vec{p}_T^W| \approx |\vec{p}_T^l+\vec{H}_{T}^{\mathrm{miss}}|
+\end{equation}
+We use Monte Carlo distributions of $\left( 1 - \cos \Delta \theta_T \right) / 2$
+for lost leptons to translate the observed $W$ \pt spectrum into a lost lepton \MHT spectrum.
+This lost lepton \MHT spectrum is then used to estimate a high-to-medium \MHT ratio $R^{\rm MHT}$, which can be used
+to extrapolate a lost-lepton background estimate at medium \MHT, from the method described in Sec.\ref{sec:lost-leptons},
+to high \MHT, thus reducing the statistical uncertainty of the lost-lepton background estimate in the
+most sensitive search bins.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.55\linewidth]{plots/mht-extrapolation/compare_ptW_dists.pdf}
+  \caption{ Comparison the shape of the generator-level $W$ \pt spectrum with the W \pt spectrum calculated from the lepton \pt and either the \MET or \MHT vector.
+  }
+  \label{fig:ptW-met-mht}
+\end{figure}
+
+Figure~\ref{fig:met-vs-wpt} shows an example single lepton control sample \MHT vs $\pt^W$ distribution.
+The statistical uncertainty on the \MHT extrapolation ratio $R^{\rm MHT}$ is mostly determined by
+the number of single lepton control sample events with $\pt^W > \MHT_{\rm\ low}$, where $\MHT_{\rm\ low}$
+is the low edge of the high-$\MHT$ search bin (see App.\ref{app:mht-extrapolation} for details).
+For example, the extrapolation ratio $R^{\rm MHT}$ going from \MHT bin 1 to \MHT bin 2, which is from
+500 to 750~GeV, uses all single lepton control sample events with $\pt^W>500$~GeV, while the
+standard lost-lepton method only uses single-lepton events with \MHT between 500 to 750~GeV
+to predict the background for \MHT bin 2.
+Figure~\ref{fig:met-vs-wpt} illustrates the source of the improvement in control sample statistics,
+which is typically more than a factor of four.
+
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.55\linewidth]{plots/mht-extrapolation/met-vs-wpt.pdf}
+  \caption{ Example \MHT vs $W$ \pt distribution for single-lepton control sample events
+    from the \ttbar Monte Carlo with $\HT>1200$~GeV, $\njets\ge 7$, and $\nbjets\ge3$.
+    The horizontal lines define \MHT bin 2 (500 to 750).  The \MHT extrapolation
+    method uses all events above the vertical line with $\pt^W>500$~GeV in the estimation
+    of the \MHT spectrum above 500~GeV.
+  }
+  \label{fig:met-vs-wpt}
+\end{figure}
+
+
+Figure~\ref{fig:cdtt-lf-ratio} shows the $\left( 1 - \cos \Delta \theta_T \right) / 2$
+distribution of lost lepton events, including the separate contributions from $W \to e,\mu$,
+$W \to \tau \to e,\mu$, and $W \to \tau \to$ hadrons.
+When the lepton is emitted in the direction opposite the $W$ \pt, $\Delta \theta_T$ is close to $\pi$,
+the lepton \pt is soft, and $\left( 1 - \cos \Delta \theta_T \right) / 2$ is close to 1.
+Figure~\ref{fig:cdtt-lf-ratio} also shows the ratio of lost lepton events  to single lepton control sample
+events $R^{LC}$ as a function of the reconstructed $W$ \pt.
+This isn't flat, indicating that lost lepton and control sample events have different $W$ \pt spectra,
+so this must be taken into account. 
+Both the $\left( 1 - \cos \Delta \theta_T \right) / 2$ and $R^{LC}$ distributions have some additional dependence
+on \njets and \HT.
+This is taken into account by using separate distributions for each \njets and \HT bin combination,
+as shown in Appendix~\ref{app:mht-extrapolation}.
+
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.45\linewidth]{plots/mht-extrapolation/cdtt-lost-leptons.pdf}
+  \includegraphics[width=0.45\linewidth]{plots/mht-extrapolation/lf-ratio.pdf}
+  \caption{
+    Distribution of $\left( 1 - \cos \Delta \theta_T \right) / 2$ (left) for lost
+    leptons and the ratio of lost lepton events / control lepton events as a function of $\pt^W$ from the \ttbar Monte Carlo.
+    The left figure is summed over all search bins and shows the contributions from $W \to e \nu$ and $W \to \mu \nu$ (blue),
+    $W \to \tau \nu$ with $\tau \to e$ or $\mu$ (green), and $W \to \tau \nu$ with $\tau \to$ hadrons (red).  Note that we are not yet applying this method to the  $\tau \to$ hadrons estimation.
+    The right plot is an example distribution corresponding to events in \njets bin 1, \HT bin 2.
+    The vertical dashed lines in the right plot show the location of the \MHT bin boundaries.
+    The points below 200 GeV are not used in the analysis.
+  }
+  \label{fig:cdtt-lf-ratio}
+\end{figure}
+
+
+The high / medium $\MHT$ ratios for each \njets, \HT bin combination are derived from \MHT distributions
+constructed from the single lepton control sample, where each event makes a contribution from the corresponding
+$\left( 1 - \cos \Delta \theta_T \right) / 2$ distribution weighted by the lost / control ratio $R^{LC}$.
+The resulting \MHT distributions are compared with the Monte Carlo lost lepton \MHT distributions in
+Fig.\ref{fig:mc-and-cdtt-mht-distributions}.
+The agreement is reasonable.
+
+
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.95\linewidth]{plots/mht-extrapolation/met-distributions-mc-and-cdtt.pdf}
+  \caption{
+    Distributions of \MHT for the 9 \njets, \HT analysis bin combinations for the \ttbar Monte Carlo sample.
+    The blue distributions are from the lost lepton Monte Carlo, while the red distributions are
+    built from the single lepton control sample, applying the method described in this section.
+  }
+  \label{fig:mc-and-cdtt-mht-distributions}
+\end{figure}
+
+
+Figure~\ref{fig:mc-and-cdtt-pred-bg-events} compares the predicted number of \ttbar lost lepton background
+events with the observed number for all of the search bins for \MHT bins 2 and 3, where the extrapolation was
+done from \MHT bin 1.
+The agreement is reasonable.  The difference in error bars is an indication of the improvement in the
+statistical uncertainty of the lost lepton background estimate.
+More details on the \MHT extrapolation method, including how the statistical errors from the
+single lepton control sample are propagated to the BG predictions, are given in Appendix~\ref{app:mht-extrapolation}.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.95\linewidth]{plots/mht-extrapolation/mc-and-cdtt-pred-bg-events.pdf}
+  \caption{
+    Number of \ttbar lost lepton background events in the analysis search bins from
+    the Monte Carlo (blue) and the \MHT extrapolation method (red).
+    The equivalent integrated luminosity of the \ttbar Monte Carlo sample is about 31 fb$^{-1}$.
+  }
+  \label{fig:mc-and-cdtt-pred-bg-events}
+\end{figure}
+
+
+This method includes both events with a single $W \to e,\mu$ decay and events with a
+$W \to \tau$ decay, including hadronic tau decays.
+The hadronic tau events contribute to both the lost lepton
+$\left( 1 - \cos \Delta \theta_T \right) / 2$ distribution (Fig.\ref{fig:cdtt-lf-ratio}, left)
+and the numerator of the lost / control ratio $R^{LC}$ (Fig.\ref{fig:cdtt-lf-ratio}, right)
+but are essentially absent from the single lepton control sample. 
+
+For the purpose of this preliminary study, the lost / control ratio $R^{LC}$
+as a function of $\pt^W$ are taken from Monte Carlo and will depend on the lepton acceptance,
+identification, and isolation efficiency.  This dependence is also captured by the translation factors calculated in the classical method to model the lost-lepton search region from the single-lepton control sample (equations \ref{eq:isolation_muon}-\ref{eq:elec_acc}).
+Thus, the $R^{LC}$ ratios needed to translate the $W$ \pt spectrum measured in the control region to the $W$ \pt spectrum in the search region will be taken from the classical method and validated via a tag-and-probe method in data.
+We do not anticipate the systematic uncertainties associated with these efficiencies and ratios to be larger than the statistical uncertainties
+in the most sensitive search bins.
+The material shown in this section is based on the \ttbar Monte Carlo, though it will be
+extended to include the other lost lepton sources: $W$+jets and single top.
+No trigger requirement was imposed for the material shown in this section.  We expect to
+use the single lepton plus hadronic activity cross triggers, which have an online \HT requirement of 400 GeV and an online \MET requirement of 70 GeV, to measure the $W$ \pt spectrum.  This trigger will allow us to capture more of the $W$ \pt spectrum than is accessible with the main hadronic analysis trigger, namely events with $W$ \pt $>200$ GeV and \MHT $<200$ GeV.  This is illustrated in Figure \ref{fig:ptW-vs-triggers}, which shows the reconstructed $W$ \pt spectrum for offline \MHT, \HT, and lepton \pt thresholds.
+
+\begin{figure}
+\includegraphics[width=0.95\linewidth]{plots/mht-extrapolation/ptW_vs_triggers.pdf}
+  \caption{
+    Comparison of the true $W$ \pt spectrum (black) in all single-muon \ttbar events with the $W$ \pt spectrum reconstructed from an isolated muon and the \MHT.  The orange histogram most likely corresponds to the selection required by the trigger we will use to measure the $W$ \pt spectrum in single-lepton events.
+  }
+  \label{fig:ptW-vs-triggers}
+\end{figure}
+
+To gauge the statistical power of this method in a direct analysis context, we compare the lost-$e/\mu$ background in the $\nbjets>=2$ bins from 10 \invfb of \ttbar MC with the estimations from the classical method and the extrapolation method in Tables \ref{tab:ll-closure-nb2-nj1}-\ref{tab:ll-closure-nb3-nj3} and Figures \ref{fig:ll-closure-nb2-nj1}-\ref{fig:ll-closure-nb3-nj3}. The most noticeable result of this comparison is the fact that all of the bins that had no control sample statistics under the classical method have an effective control sample under the extrapolation method.  The closure of the two methods is comparable within the statistics of the MC.  We plan to evaluate this method with a higher statistics sample to test for any biases introduced by the extrapolation.
+\clearpage
+
+\begin{table}[h]\centering
+  \caption{Closure test for search bins with $\nbjets=2$ and $4\leq\njets\leq6$, plotted in Figure \ref{fig:ll-closure-nb2-nj1}}
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    MHT-HT Bin & Classical Pred. & Extrapolated Pred. & Obs.  \\ \hline
+Box 1 & \multicolumn{2}{c|}{$1110.0\pm25.8$} & 1231 \\
+Box 2 & \multicolumn{2}{c|}{$225.1\pm11.8$} & 239 \\
+Box 3 & \multicolumn{2}{c|}{$16.7\pm3.3$} &  24 \\
+\hline
+Box 4 & $23.8\pm4.2$ & $29.2\pm5.1$ & $ 15$ \\
+Box 5 & $4.30\pm1.70$ & $2.92\pm1.37$ & $  3$ \\
+Box 6 & $1.70\pm0.90$ & $1.09\pm0.36$ & $  2$ \\
+    \hline  \end{tabular}
+    \label{tab:ll-closure-nb2-nj1}
+\end{table}
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.48\linewidth]{plots/mht-extrapolation/compare-closure/NB2_NJ1.pdf} 
+    \includegraphics[width=0.48\linewidth]{plots/mht-extrapolation/compare-closure/NB2_NJ1_ext.pdf}
+  \caption{
+      Lost-lepton estimation closure tests in search bins with $\nbjets=2$ and $4\leq\njets\leq6$.  The black markers are the true expected backgrounds taken directly from 10 \fbinv of \ttbar MC.  The teal histogram corresponds to the background predicted by either the classical (left) or extrapolation method (right).  The systematic uncertainties, which are dominated by control sample statistics in the most sensitive bins, correspond to 10 \invfb of data.  Note that the background in MHT-HT boxes 1-3 is always predicted by the classical method.
+    }
+    \label{fig:ll-closure-nb2-nj1}
+  \end{center}
+\end{figure}
+\clearpage
+
+
+\begin{table}[h]\centering
+  \caption{Closure test for search bins with $\nbjets=2$ and $7\leq\njets\leq8$, plotted in Figure \ref{fig:ll-closure-nb2-nj2}}
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    MHT-HT Bin & Classical Pred. & Extrapolated Pred. & Obs.  \\ \hline
+Box 1 & \multicolumn{2}{c|}{$263.6\pm11.8$} & 248 \\
+Box 2 & \multicolumn{2}{c|}{$135.6\pm8.7$} & 142 \\
+Box 3 & \multicolumn{2}{c|}{$20.5\pm3.5$} &  22 \\
+\hline
+Box 4 & $2.90\pm1.20$ & $4.75\pm1.82$ & $  3$  \\
+Box 5 & $3.00\pm1.20$ & $2.89\pm1.17$ & $  3$ \\
+Box 6 & $0.90\pm0.90$ & $0.71\pm0.23$ & $  0$ \\
+    \hline  \end{tabular}
+    \label{tab:ll-closure-nb2-nj2}
+\end{table}
+
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.48\linewidth]{plots/mht-extrapolation/compare-closure/NB2_NJ2.pdf} 
+    \includegraphics[width=0.48\linewidth]{plots/mht-extrapolation/compare-closure/NB2_NJ2_ext.pdf}
+  \caption{
+      Lost-lepton estimation closure tests in search bins with $\nbjets=2$ and $7\leq\njets\leq8$.  The black markers are the true expected backgrounds taken directly from 10 \fbinv of \ttbar MC.  The teal histogram corresponds to the background predicted by either the classical (left) or extrapolation method (right).  The systematic uncertainties, which are dominated by control sample statistics in the most sensitive bins, correspond to 10 \invfb of data.  Note that the background in MHT-HT boxes 1-3 is always predicted by the classical method.
+    }
+    \label{fig:ll-closure-nb2-nj2}
+  \end{center}
+\end{figure}
+\clearpage
+
+\begin{table}[h]\centering
+  \caption{Closure test for search bins with $\nbjets=2$ and $\njets\geq9$, plotted in Figure \ref{fig:ll-closure-nb2-nj3}}
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    MHT-HT Bin & Classical Pred. & Extrapolated Pred. & Obs.  \\ \hline
+Box 1 & \multicolumn{2}{c|}{$22.6\pm3.5$} &  27 \\
+Box 2 & \multicolumn{2}{c|}{$26.4\pm3.3$} &  19 \\
+Box 3 & \multicolumn{2}{c|}{$11.9\pm2.5$} &  18 \\
+\hline
+Box 4 & $0.50\pm0.40$ & $0.58\pm0.23$ & $  1$  \\
+Box 5 & $0.50\pm0.30$ & $1.68\pm0.71$ & $  1$  \\
+Box 6 & 0 & $0.17\pm0.06$ & $  0$ \\
+    \hline  \end{tabular}
+    \label{tab:ll-closure-nb2-nj3}
+\end{table}
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.48\linewidth]{plots/mht-extrapolation/compare-closure/NB2_NJ3.pdf} 
+    \includegraphics[width=0.48\linewidth]{plots/mht-extrapolation/compare-closure/NB2_NJ3_ext.pdf}
+  \caption{
+      Lost-lepton estimation closure tests in search bins with $\nbjets=2$ and $\njets\geq9$.  The black markers are the true expected backgrounds taken directly from 10 \fbinv of \ttbar MC.  The teal histogram corresponds to the background predicted by either the classical (left) or extrapolation method (right).  The systematic uncertainties, which are dominated by control sample statistics in the most sensitive bins, correspond to 10 \invfb of data.  Note that the background in MHT-HT boxes 1-3 is always predicted by the classical method.
+    }
+    \label{fig:ll-closure-nb2-nj3}
+  \end{center}
+\end{figure}
+\clearpage
+
+\begin{table}[h]\centering
+  \caption{Closure test for search bins with $\nbjets\geq3$ and $4\leq\njets\leq6$, plotted in Figure \ref{fig:ll-closure-nb3-nj1}}
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    MHT-HT Bin & Classical Pred. & Extrapolated Pred. & Obs.  \\ \hline
+Box 1 & \multicolumn{2}{c|}{$159.4\pm9.7$} & 182 \\
+Box 2 & \multicolumn{2}{c|}{$41.2\pm5.2$} &  44 \\
+Box 3 & \multicolumn{2}{c|}{$4.7\pm2.1$} &   3 \\
+\hline
+Box 4 & $4.00\pm1.90$ & $4.39\pm0.80$ & $  3$ \\
+Box 5 & $0.70\pm0.70$ & $0.82\pm0.51$ & $  1$ \\
+Box 6 & $1.40\pm1.40$ & $0.21\pm0.07$ & $  2$ \\
+    \hline  \end{tabular}
+    \label{tab:ll-closure-nb3-nj1}
+\end{table}
+
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.48\linewidth]{plots/mht-extrapolation/compare-closure/NB3_NJ1.pdf} 
+    \includegraphics[width=0.48\linewidth]{plots/mht-extrapolation/compare-closure/NB3_NJ1_ext.pdf}
+  \caption{
+      Lost-lepton estimation closure tests in search bins with $\nbjets\geq3$ and $4\leq\njets\leq6$.  The black markers are the true expected backgrounds taken directly from 10 \fbinv of \ttbar MC.  The teal histogram corresponds to the background predicted by either the classical (left) or extrapolation method (right).  The systematic uncertainties, which are dominated by control sample statistics in the most sensitive bins, correspond to 10 \invfb of data.  Note that the background in MHT-HT boxes 1-3 is always predicted by the classical method.
+    }
+    \label{fig:ll-closure-nb3-nj1}
+  \end{center}
+\end{figure}
+\clearpage
+
+
+
+\begin{table}[h]\centering
+  \caption{Closure test for search bins with $\nbjets\geq3$ and $7\leq\njets\leq8$, plotted in Figure \ref{fig:ll-closure-nb3-nj2}}
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    MHT-HT Bin & Classical Pred. & Extrapolated Pred. & Obs.  \\ \hline
+Box 1 & \multicolumn{2}{c|}{$63.4\pm5.7$} &  73 \\
+Box 2 & \multicolumn{2}{c|}{$38.3\pm4.7$} &  46 \\
+Box 3 & \multicolumn{2}{c|}{$4.4\pm1.7$} &  11 \\
+\hline
+Box 4 & 0 & $1.21\pm0.47$ & $  0$ \\
+Box 5 & $1.30\pm1.00$ & $0.62\pm0.33$ & $  2$  \\
+Box 6 & 0 & $0.19\pm0.07$ & $  0$ \\
+    \hline  \end{tabular}
+    \label{tab:ll-closure-nb3-nj2}
+\end{table}
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.48\linewidth]{plots/mht-extrapolation/compare-closure/NB3_NJ2.pdf} 
+    \includegraphics[width=0.48\linewidth]{plots/mht-extrapolation/compare-closure/NB3_NJ2_ext.pdf}
+  \caption{
+      Lost-lepton estimation closure tests in search bins with $\nbjets\geq3$ and $7\leq\njets\leq8$.  The black markers are the true expected backgrounds taken directly from 10 \fbinv of \ttbar MC.  The teal histogram corresponds to the background predicted by either the classical (left) or extrapolation method (right).  The systematic uncertainties, which are dominated by control sample statistics in the most sensitive bins, correspond to 10 \invfb of data.  Note that the background in MHT-HT boxes 1-3 is always predicted by the classical method.
+    }
+    \label{fig:ll-closure-nb3-nj2}
+  \end{center}
+\end{figure}
+\clearpage
+
+\begin{table}[h]\centering
+  \caption{Closure test for search bins with $\nbjets\geq3$ and $\njets\geq9$, plotted in Figure \ref{fig:ll-closure-nb3-nj3}}
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    MHT-HT Bin & Classical Pred. & Extrapolated Pred. & Obs. \\ \hline
+Box 1 & \multicolumn{2}{c|}{$8.0\pm2.1$} &   9 \\
+Box 2 & \multicolumn{2}{c|}{$9.0\pm2.0$} &  17 \\
+Box 3 & \multicolumn{2}{c|}{$6.7\pm2.1$} &   3 \\
+\hline
+Box 4 & 0 & $0.20\pm0.08$ & $  0$ \\
+Box 5 & $0.20\pm0.20$ & $0.95\pm0.46$ & $  0$ \\
+Box 6 & 0 & $0.07\pm0.03$ & $  0$ \\
+    \hline  \end{tabular}
+    \label{tab:ll-closure-nb3-nj3}
+\end{table}
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.48\linewidth]{plots/mht-extrapolation/compare-closure/NB3_NJ3.pdf} 
+    \includegraphics[width=0.48\linewidth]{plots/mht-extrapolation/compare-closure/NB3_NJ3_ext.pdf}
+  \caption{
+      Lost-lepton estimation closure tests in search bins with $\nbjets\geq3$ and $\njets\geq9$.  The black markers are the true expected backgrounds taken directly from 10 \fbinv of \ttbar MC.  The teal histogram corresponds to the background predicted by either the classical (left) or extrapolation method (right).  The systematic uncertainties, which are dominated by control sample statistics in the most sensitive bins, correspond to 10 \invfb of data. Note that the background in MHT-HT boxes 1-3 is always predicted by the classical method.
+    }
+    \label{fig:ll-closure-nb3-nj3}
+  \end{center}
+\end{figure}
+\clearpage
+
+\subsection{Lepton efficiency validation}
+\label{sec:hadronic-taus}
+One of the most important inputs not only for the classical lost-lepton method but also for the hadronic tau and \MHT extrapolation method are the lepton efficiencies.
+These can be separated into three main categories. Electron (e), muon ($\mu$) and isolated tracks (e/$\mu$/$\pi$ tracks) (see Tab:\ref{tab:ll-efficiencies-list}). The e and $\mu$ fraction are further split up in the fraction of out of acceptance leptons
+\begin{table}[h]\centering
+  \caption{List of efficiencies of all different object used for \ttbar \& \wpj background estimation methods.}}
+  \begin{tabular}{|c|c|c|}
+    \hline
+    Object & Parametrization & Validation in Data \\ \hline
+$\mu$, iso & \pt, activity & Tag\&Probe  \\
+$\mu$, reco & \pt, activity & Tag\&Probe \\
+$\mu$, acc & \HT, \MHT, \NJets & -  \\
+\hline
+e, iso & \pt, activity& Tag\&Probe  \\
+e, reco & \pt, activity & Tag\&Probe  \\
+e, acc & \HT, \MHT, \NJets & -  \\
+\hline
+$\mu$ tracks & 0 & Tag\&Probe  \\
+e tracks & 0 & Tag\&Probe  \\
+$\pi$ tracks & 0 & Tag\&Probe (indirect)  \\
+    \hline  \end{tabular}
+    \label{tab:ll-efficiencies-list}
+\end{table}
+for which the correction factors have to come directly from MC and can not be validated since they are by definition out of kinematic region therefore not accessible in data.\\
+Second the reconstruction and ID fraction which are combined to the one fraction (reco), and lastly the isolation fraction (iso).\\
+The iso fraction can be directly validated in data using a Tag\&Probe method where the probe object is a well reconstructed and ID lepton on which the isolation criteria is tested. The ID is also directly available in data by selecting well reconstructed leptons as probe and testing for ID criteria. The reconstruction efficiencies are not fully accessible since the probe object has always has to be some sort of reconstructed object in the detector, e.g.. a lepton which is within the kinematic acceptance might not be reconstructed as any object at all thus not entering into the probe object collection. This leaves an untested gab between the efficiencies derived from MC (accessing gen information) which incorporate all leptons within acceptance and the Tag\&Probe approach which has to start with preferable most basic object.\\
+The most basic objects to select as probe are for muons charged PF candidates or tracker muons. Note that already here the gab is about 2-3\% of the fraction of all leptons lost due to not being reconstructed which contributes about 50\% of the overall not reconstructed and ID failing muons.\\
+Experts from the egamma POG advised the use of photons as the most basic objects for testing electron reconstruction efficiencies. This becomes reasonable when considering the reconstruction chain of electrons using the PF algorithm.
+Firstly a super-cluster in the eCal is selected which includes already a cut on the eCal/hCal energy fraction in order to reject jets which leave energy in both calorimeters. Secondly a seed track is being tested to match to the super-cluster in order to distinguish between electrons and photons. Lastly additional reconstruction criteria on the shape and ID criteria are applied.
+The necessary choice of photons leave of course also a gab for those electrons not being reconstructed as super-clusters and especially those that fail the eCal/hCal energy fraction cuts. Here the choice of the activity around the electron becomes trick to test since it is defined as the charged hCal fraction within a cone of $R=1$. Increasing activity biases here the Tag\&Probe obtained efficiencies to higher values since it is more likely to not have electrons as photons which are badly reconstructed.
+Studies on the electron and muon reconstruction and ID efficiency validation are on going to reducing these effects and closing the residual gab but it becomes evident from looking at the reconstruction efficiencies as a function of the search variables that using some inclusive efficiencies provided from the POG would be sufficient for deriving data/MC uncertainties and if necessary scaling factors if the remaining dependencies are not solvable.\\
+The isolated track veto efficiency are more complicated to derive due to three reasons:
+\begin{itemize}
+ \item Isolated tracks are only selected if they have a computed \mt value of less than 100 GeV.
+ \item The amount of tracks originating from actual leptons is especially for isolated pion tracks from hadronic tau decays very low compared to other tracks.
+ \item The isolated track veto is applied on top of the isolated electron and muon veto.
+\end{itemize}
+
+ 1. The \mt cut disregarding only events with tracks with $\mt>100\gev$ is important to preserve signal selection efficiency while reduces the \ttbar \& \wpj background significantly. However the \mt aims at reconstructing the transverse W mass from the decay produces namely the lepton and the neutrino since not interacting being indirectly visible as missing transverse momenta which is computed from the recoil of the hadronic activity combined with the lepton momentum. In the validation region of $Z\rightarrowll$ no neutrino is present as source for real missing transverse energy. In order to mimic a W decay the tag lepton is subtracted from the computed missing transverse energy and the \mt variable is calculated. This can be seen in plot FIXME REF. Here the mass is of course not 80 but 91 \gev thus the cut value of 100 \gev needs to be increased by 22 \gev to 122\gev to compensate for the important threshold effect relative to the to be cut on mass.\\
+ 2. Here the choice of the probe object is of great importance. If one chooses as probe all tracks passing the \pt threshold of 5 \gev for electrons and muons and 10 \gev for pion tracks the background becomes overwhelming and the selected events of failing the isolation criteria become overwhelmingly dominated by events with no leptonic originating tracks. For electrons and muons a compromise is right now under study to use chargedPFcands to whom the pdgID 11,13 (electron, muon) has already been assigned to. This again introduces a gab for tracks from leptons which are not identified according to the pdgID criteria. This gab than also enters into the equation when computing the reduction of the lost electron and muon background from muon and electron tracks. The amount of real electron and muon tracks which fail to get the correct pdgID 11,13 might still be reconstructed as pion tracks and could lead to rejecting the event if the track is isolated.
+ For hadronically decaying taus the situation can not be eased. Therefore the approach to exploit similarities of tracks from single prong tau decays and electron and muons tracks is under study. If this is true a similar assumption can be drawn for decays of one charged pion and two neutral pions which also leaves only one track in the tracker. The amount of taus decaying to 3 charged pions should rather seldom lead to an isolated track. The branching fraction of the in question tau decays are: $\tau\rightarrow\pi^{-} + \nu (17\%)$, $\tau\rightarrow\pi^{-} + 1/2\pi0 + \nu (53\%)$ and 3 charged pions (21\%).\\
+ 3. The application on top of the isolated electron and muon veto leads to a complication since the efficiency of the isolated electron, muon and also to some extend the isolated pion tracks can only be seen relative to the amount lost due to failing the isolated lepton veto. Therefore the effective isolated track veto efficiency becomes a function of the isolated electron and muon veto which is in turn separated into out of acceptance, reconstruction and isolation corrections. 
+In the corresponding equations ref.\ref{eq:isolated_track_reduction1}, \ref{eq:isolated_track_reduction2} $p_{full}$ is the final full prediction of the lost-lepton background, $p_{ll}$ the prediction disregarding any isolated track veto effects, $C_{IsoTrack}$ the selection power of tracks in events which are otherwise counted as lost-leptons due to unidentified electrons or muons, $\epsilon_{ll},\epsilon_{IsoTrackRel}$ the overall lepton efficiencies and isolated track efficiencies on fraction of leptons failing the isolated lepton veto and $\epsilon_{IsoTrack}$ which is observed isolated track veto efficiency.
+
+ 
+
+\begin{equation}
+ p_{full}(\epsilon_{ll},\epsilon_{IsoTrackRel}) = p_{ll}(\epsilon_{ll}) * (1-C_{IsoTrack}(\epsilon_{ll},\epsilon_{IsoTrackRel}))
+  \label{eq:isolated_track_reduction1}
+\end{equation}
+
+\begin{equation}
+  C_{IsoTrackRel}(\epsilon_{ll},\epsilon_{isotrack}) = \frac{(1-\epsilon_{ll}) * \epsilon_{IsoTrack}}{\epsilon_{ll}}
+  \label{eq:isolated_track_reduction2}
+\end{equation}
+
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.48\linewidth]{plots/lost-lepton/efficiencies/MuIsoPTActivity.pdf}
+  \includegraphics[width=0.48\linewidth]{plots/lost-lepton/efficiencies/tag_probe/MuIsoTagAndProbeMC.pdf}//
+  \includegraphics[width=0.60\linewidth]{plots/lost-lepton/efficiencies/tag_probe/MuIsoPTActivity_ratio.pdf}
+  \caption{Comparison of the muon isolation efficiencies obtained from \ttbar &\ \wpj (left), using a Tag\&Probe method on DY events (middle), and the efficiencies ratio (\ttbar \& \wpj) / (Tag\&Probe DY). }
+  \label{fig:lost-lepton-tag_probe-mu-iso}
+\end{figure}
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.48\linewidth]{plots/lost-lepton/efficiencies/ElecIsoPTActivity.pdf}
+  \includegraphics[width=0.48\linewidth]{plots/lost-lepton/efficiencies/tag_probe/ElecIsoTagAndProbeMC.pdf}
+  \includegraphics[width=0.60\linewidth]{plots/lost-lepton/efficiencies/tag_probe/ElecIsoPTActivity_ratio.pdf}
+  \caption{Comparison of the electron isolation efficiencies obtained from \ttbar &\ \wpj (left), using a Tag\&Probe method on DY events (middle), and the efficiencies ratio (\ttbar \& \wpj) / (Tag\&Probe DY).}
+  \label{fig:lost-lepton-tag_probe-elec-iso}
+\end{figure}
+List here comparison plots of truth from ttbar wpj and dy for recoID and isoaltion to confirm the assumption of activity and pt to be transverable.
+
+Currently reasonable Tag\&Probe results have been obtained for the electron and muon isolation efficiencies on simulated events.
+Plot here as well control plots for mt distribution in dy and ttbar wpj. ID efficiencies for muons and idreco for electrons with photons.
+Also if understood show here plots for isolated tracks need to fix mt cut behaviour.
+
+
+\clearpage
