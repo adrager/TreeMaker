@@ -304,7 +304,7 @@ doZinv=False,
     )
     process.tpPairs = cms.EDProducer("CandViewShallowCloneCombiner",
     decay = cms.string("LeptonsNewTag:IdIsoMuon@+ LeptonsNew:IdMuon@-"), # charge coniugate states are implied
-    cut   = cms.string("60.0 < mass < 130.0"),
+    cut   = cms.string("0.0 < mass < 13000.0"),
     )
     process.muonIsoEffs = cms.EDAnalyzer("TagProbeFitTreeProducer",
     # pairs
@@ -375,7 +375,7 @@ doZinv=False,
     process.tpPairsMuReco = cms.EDProducer("CandViewShallowCloneCombiner",
     #decay = cms.string("LeptonsNewTag:IdIsoMuon@+ SelectedPFCandidatesProbeCands10@-"), # charge coniugate states are implied
     decay = cms.string("LeptonsNewTag:IdIsoMuon@+ SelectedPFMuCandidates@-"), # charge coniugate states are implied
-    cut   = cms.string("60.0 < mass < 130.0"),
+    cut   = cms.string("0.0 < mass < 13000.0"),
     )
     process.muonRecoEffs = cms.EDAnalyzer("TagProbeFitTreeProducer",
     # pairs
@@ -444,7 +444,7 @@ doZinv=False,
     )
     process.tpPairsElecIso = cms.EDProducer("CandViewShallowCloneCombiner",
     decay = cms.string("LeptonsNewTag:IdIsoElectron@+ LeptonsNew:IdElectron@-"), # charge coniugate states are implied
-    cut   = cms.string("60.0 < mass < 130.0"),
+    cut   = cms.string("0.0 < mass < 13000.0"),
     )
     process.elecIsoEffs = cms.EDAnalyzer("TagProbeFitTreeProducer",
     # pairs
@@ -512,7 +512,7 @@ doZinv=False,
     )
     process.tpPairsElecReco = cms.EDProducer("CandViewShallowCloneCombiner",
     decay = cms.string("LeptonsNewTag:IdIsoElectron@+ slimmedPhotons"), # charge coniugate states are implied
-    cut   = cms.string("60.0 < mass < 130.0"),
+    cut   = cms.string("0.0 < mass < 13000.0"),
     )
     process.elecRecoEffs = cms.EDAnalyzer("TagProbeFitTreeProducer",
     # pairs
@@ -583,7 +583,7 @@ doZinv=False,
     process.tpPairsIsoTrackMu = cms.EDProducer("CandViewShallowCloneCombiner",
     decay = cms.string("LeptonsNew:IdIsoMuon@+ SelectedPFMuCandidates@-"), # charge coniugate states are implied
     #decay = cms.string("LeptonsNewTag:IdIsoMuon@+ SelectedPFCandidatesProbeCands5@-"), # charge coniugate states are implied
-    cut   = cms.string("60.0 < mass < 130.0"),
+    cut   = cms.string("0.0 < mass < 13000.0"),
     )
     process.IsoTrackMuonIsoEffs = cms.EDAnalyzer("TagProbeFitTreeProducer",
     # pairs
@@ -655,7 +655,7 @@ doZinv=False,
     process.tpPairsIsoTrackElec = cms.EDProducer("CandViewShallowCloneCombiner",
     decay = cms.string("LeptonsNew:IdIsoElectron@+ SelectedPFElecCandidates@-"), # charge coniugate states are implied
     #decay = cms.string("LeptonsNewTag:IdIsoElectron@+ SelectedPFCandidatesProbeCands5@-"), # charge coniugate states are implied
-    cut   = cms.string("60.0 < mass < 130.0"),
+    cut   = cms.string("0.0 < mass < 13000.0"),
     )
     process.IsoTrackElecIsoEffs = cms.EDAnalyzer("TagProbeFitTreeProducer",
     # pairs
@@ -726,7 +726,7 @@ doZinv=False,
     process.tpPairsIsoTrackPion = cms.EDProducer("CandViewShallowCloneCombiner",
     decay = cms.string("IsolatedPionTracksVeto@+ SelectedPFPionCandidates@-"), # charge coniugate states are implied
     #decay = cms.string("LeptonsNewTag:IdIsoElectron@+ SelectedPFCandidatesProbeCands5@-"), # charge coniugate states are implied
-    cut   = cms.string("60.0 < mass < 130.0"),
+    cut   = cms.string("0.0 < mass < 13000.0"),
     )
     process.IsoTrackPionIsoEffs = cms.EDAnalyzer("TagProbeFitTreeProducer",
     # pairs
@@ -828,7 +828,7 @@ doZinv=False,
     VarsDouble.extend(['MHT:Pt(MHT)','MHT:Phi(MHT_Phi)'])
     process.MHTFilter = DoubleFilter.clone(
     DoubleTag          = cms.InputTag('MHT:Pt'),
-    CutValue	= cms.double('200'),
+    CutValue	= cms.double('100'),
     )
     if applybaseline:
 			process.Baseline += process.HTFilter
@@ -892,7 +892,7 @@ doZinv=False,
     #  VarsRecoCand = cms.vstring('selectedIDIsoMuons','selectedIDMuons','selectedIDIsoElectrons','selectedIDMuons','IsolatedTracks','HTJets'),
    #   RecoCandVector.extend(['selectedIDIsoMuons','selectedIDMuons','selectedIDIsoElectrons','selectedIDElectrons','IsolatedTracks']),
       RecoCandVector.extend(['IsolatedElectronTracksVeto|IsolatedElectronTracksVeto:MT(F_MT)','IsolatedMuonTracksVeto|IsolatedMuonTracksVeto:MT(F_MT)','IsolatedPionTracksVeto|IsolatedPionTracksVeto:MT(F_MT)','LeptonsNew:IdIsoMuon(selectedIDIsoMuons)|LeptonsNew:MuIDIsoMTW(F_MTW)','LeptonsNew:IdMuon(selectedIDMuons)|LeptonsNew:MuIDMTW(F_MTW)','LeptonsNew:IdIsoElectron(selectedIDIsoElectrons)|LeptonsNew:ElecIDIsoMTW(F_MTW)','LeptonsNew:IdElectron(selectedIDElectrons)|LeptonsNew:ElecIDMTW(F_MTW)','SelectedPFCandidates|SelectedPFCandidates:Charge(I_Charge)|SelectedPFCandidates:Typ(I_Typ)']),
-      RecoCandVector.extend(['GenLeptons:Boson(GenBoson)|GenLeptons:BosonPDGId(I_GenBosonPDGId)','GenLeptons:Muon(GenMu)|GenLeptons:MuonTauDecay(I_GenMuFromTau)' ,'GenLeptons:Electron(GenElec)|GenLeptons:ElectronTauDecay(I_GenElecFromTau)','GenLeptons:Tau(GenTau)|GenLeptons:TauHadronic(I_GenTauHad)'] ) # gen information on leptons
+      RecoCandVector.extend(['GenLeptons:Boson(GenBoson)|GenLeptons:BosonPDGId(I_GenBosonPDGId)','GenLeptons:Neutrino(Neutrino)','GenLeptons:Muon(GenMu)|GenLeptons:MuonTauDecay(I_GenMuFromTau)' ,'GenLeptons:Electron(GenElec)|GenLeptons:ElectronTauDecay(I_GenElecFromTau)','GenLeptons:Tau(GenTau)|GenLeptons:TauHadronic(I_GenTauHad)'] ) # gen information on leptons
       RecoCandVector.extend(['GenLeptons:TauDecayCands(TauDecayCands)|GenLeptons:TauDecayCandspdgID(I_pdgID)|GenLeptons:TauDecayCandsCharge(I_Charge)'])
       RecoCandVector.extend(['LeptonsNewTag:IdIsoMuon(selectedIDIsoMuonsNoMiniIso)','LeptonsNewTag:IdIsoElectron(selectedIDIsoElectronsNoMiniIso)'] ) # gen information on leptons
       RecoCandVector.extend(['JetsProperties(Jets)|JetsProperties:bDiscriminatorUser(F_bDiscriminator)|JetsProperties:chargedEmEnergyFraction(F_chargedEmEnergyFraction)|JetsProperties:chargedHadronEnergyFraction(F_chargedHadronEnergyFraction)|JetsProperties:chargedHadronMultiplicity(I_chargedHadronMultiplicity)|JetsProperties:electronMultiplicity(I_electronMultiplicity)|JetsProperties:jetArea(F_jetArea)|JetsProperties:muonEnergyFraction(F_muonEnergyFraction)|JetsProperties:muonMultiplicity(I_muonMultiplicity)|JetsProperties:neutralEmEnergyFraction(F_neutralEmEnergyFraction)|JetsProperties:neutralHadronMultiplicity(I_neutralHadronMultiplicity)|JetsProperties:photonEnergyFraction(F_photonEnergyFraction)|JetsProperties:photonMultiplicity(I)'] ) # jet information on various variables
